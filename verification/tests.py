@@ -7,30 +7,41 @@ Each test is dict with
     "explanation" -- not necessary key, it's using for additional info in animation.
 """
 
-
 TESTS = {
     "Basics": [
         {
-            "input": [3, 2],
-            "answer": 5,
-            "explanation": "3+2=?"
+            "input": ['.XXX.', '...X.', '.X.X.', '.....'],
+            "answer": ['.XXX.', '...X.', '.X.X.', '.....'],
         },
+
         {
-            "input": [5, 7],
-            "answer": 12,
-            "explanation": "5+7=?"
+            "input": ['X.XX', '....', 'X.XX', 'X...', 'XXX.', '....', 'XXX.'],
+            "answer": ['X.XX', '....', 'X.XX', 'X...', 'XXX.', '....', 'XXX.'],
+        },
+
+        {
+            "input": ['...XXXXXX', '.XXX.X...', '.....X.XX', 'XXXX.X...', 'XX...X.XX', 'XX.XXX.X.', 'X......X.',
+                      'XX.X.XXX.', 'XXXX.....'],
+            "answer": ['...XXXXXX', '.XXX.X...', '.....X.XX', 'XXXX.X...', 'XX...X.XX', 'XX.XXX.X.', 'X......X.',
+                       'XX.X.XXX.', 'XXXX.....'],
         }
     ],
     "Extra": [
         {
-            "input": [6, 3],
-            "answer": 9,
-            "explanation": "6+3=?"
+            "input": ['.XXX.', '...X.', '.X.X.', '.....'],
+            "answer": ['.XXX.', '...X.', '.X.X.', '.....'],
         },
+
         {
-            "input": [6, 7],
-            "answer": 13,
-            "explanation": "6+7=?"
+            "input": ['X.XX', '....', 'X.XX', 'X...', 'XXX.', '....', 'XXX.'],
+            "answer": ['X.XX', '....', 'X.XX', 'X...', 'XXX.', '....', 'XXX.'],
+        },
+
+        {
+            "input": ['...XXXXXX', '.XXX.X...', '.....X.XX', 'XXXX.X...', 'XX...X.XX', 'XX.XXX.X.', 'X......X.',
+                      'XX.X.XXX.', 'XXXX.....'],
+            "answer": ['...XXXXXX', '.XXX.X...', '.....X.XX', 'XXXX.X...', 'XX...X.XX', 'XX.XXX.X.', 'X......X.',
+                       'XX.X.XXX.', 'XXXX.....'],
         }
     ]
 }

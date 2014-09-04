@@ -1,44 +1,85 @@
+<div>
+    <p>
+        “Looking at the sky, he suddenly saw that it had become black. Then white again, but with great rippling
+        circles. The circles were vultures wheeling around the sun. The vultures disappeared, to be replaced by checkers
+        squares ready to be played on. On the board, the pieces moved around incredibly rapidly, winning dozens of games
+        every minute. They were scarcely lined up before they started rushing at each other again, banging into each
+        other, forming fighting combinations, wiping the other side out in the wink of an eye. Then the squares
+        scattered, giving way to the grille of a crossword puzzle, and here, too, words flashed, drove each other away,
+        clustered, were erased. They were all very long words, like Catalepsy, Thunderbird, Superrequeteriquísímo and
+        Anticonstitutionally. The grille faded away, and suddenly the whole sky was covered with linked words, long
+        sentences full of semicolons and inverted commas. For the space of a few seconds, there was this gigantic sheet
+        of paper on which were written sentences that moved forward jerkily, changing their meaning, modifying their
+        construction, altering completely as they advanced. It was beautiful, so beautiful that nothing like that had
+        ever been read anywhere, and yet it was impossible to decipher the writing. It was all about death, or pity, or
+        the incredible secrets that are hidden somewhere, at one of the farthest points of time. It was about water,
+        too, about vast lakes floating just above the mountains, lakes shimmering under the cold wind. For a split
+        second, Y. M. H., by screwing up his eyes, managed to read the writing, but it vanished with lightning speed and
+        he could not be sure. It seemed to go like this: There's no reason to be afraid. No, there's no reason to be
+        afraid. There's no reason to be afraid. There's no reason to be afraid. No. No, there's no reason to be afraid.
+        No, there's no reason to be afraid.”<br>
+        ― Jean-Marie G. Le Clézio, The Book of Flights
+    </p>
+</div>
 <p>
-    <i>( Describe task in general )</i>
+    A <a href="http://en.wikipedia.org/wiki/Crossword">crossword</a>
+    is a word puzzle that normally takes the form of a square or a rectangular grid of white and black
+    shaded squares. The goal is to fill the white squares with letters, forming words or phrases, by solving clues which
+    lead to the answers. In languages that are written left-to-right, the answer words and phrases are placed in the
+    grid from left to right and from top to bottom. The shaded squares are used to separate the words or phrases.
+
 </p>
 
 <p>
-    Sum two passed ints
+    We will solve crosswords which have a lattice-like structure,
+    with a higher percentage of shaded squares, leaving up to half the letters in an answer unchecked.
+    For example, if the top row has an answer running all the way across,
+    there will be no across answers in the second row.
+    Your program gets a crossword pattern without clues and numbers, so it should determine word positions itself with
+    the follow rules:<br>
+    - if a cell is placed in the most left column or neighbour left cell is shady, and neighbour right cell is empty,
+    then this cell is the beginning of left-to-right word;<br>
+    - if a cell is placed in the top row or neighbour up cell is shady, and neighbour down cell is empty,
+    then this cell is the beginning of up-to-down word.<br>
+    All words have length more or equal to 3 letters. All empty cells should filled.
 </p>
+<p>
+    You are given a crossword as a sequence of strings, where "X" is shady cell and "." is an empty cell.
+    And you are given the predefined list of words in lowercase. This list is the same for all crosswords and contains
+    about 1500 nouns. You should use only the given words.
+</p>
+<p>
+    You don't need to find all possible solutions. It will be enough to find any solution which fills the crossword
+    and contains correct words.
+</p>
+
 
 <p style="text-align: center;">
-    <img class="for_info_only" title="example" src="{{MEDIA}}example.png" alt="example" width="392px"/>
-    <img class="for_editor_only" title="example" src="{{MEDIA}}example.png" alt="example" width="380px"/>
-</p>
-
-<p><i>( Explain input and output values )</i></p>
-<p>
-    <strong>Input: </strong> Two arguments. Both are int
+    <img class="for_info_only" title="crossword" src="{{MEDIA}}crossword.svg" alt="crossword" style="max-width: 550px"/>
 </p>
 
 <p>
-    <strong>Output: </strong> Int. 
+    <strong>Input: </strong> Two arguments. A crossword as a tuple of strings and the words as a tuple of strings.
 </p>
 
+<p>
+    <strong>Output: </strong> Any solved variant of the crossword as a tuple/list of strings.
+</p>
 
 
 <div class="for_info_only">
-    <p><i>( Put some usage examples )</i></p>
     <p>
         <strong>Example:</strong>
     </p>
     <pre class="brush: python">
-checkio(3, 2) == 5
-checkio(5, 7) == 12
+solver(('.XXX.', '...X.', '.X.X.', '.....'))
     </pre>
 </div>
 
 <p class="for_info_only">
     <strong>How it is used: </strong>
-    <i>(Here you can explain how it can be used in development and what is usage of this.)</i>
 </p>
 
 <p>
     <strong>Precondition:</strong>
-    <i>Constraints for Input</i>
 </p>
