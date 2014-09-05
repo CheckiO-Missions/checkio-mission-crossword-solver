@@ -74,7 +74,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
             $content.find('.output').html('Working...');
 
             var svg = new CrosswordSVG($content.find(".explanation")[0]);
-            svg.prepare(checkioInput);
+            svg.prepare(checkioInput[0]);
 
 
             if (data.ext) {
