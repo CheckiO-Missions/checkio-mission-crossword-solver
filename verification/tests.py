@@ -153,22 +153,7 @@ TESTS = {
 
     ],
     "Extra": [
-        {
-            "input": ['.XXX.', '...X.', '.X.X.', '.....'],
-            "answer": ['.XXX.', '...X.', '.X.X.', '.....'],
-        },
 
-        {
-            "input": ['X.XX', '....', 'X.XX', 'X...', 'XXX.', '....', 'XXX.'],
-            "answer": ['X.XX', '....', 'X.XX', 'X...', 'XXX.', '....', 'XXX.'],
-        },
-
-        {
-            "input": ['...XXXXXX', '.XXX.X...', '.....X.XX', 'XXXX.X...', 'XX...X.XX', 'XX.XXX.X.', 'X......X.',
-                      'XX.X.XXX.', 'XXXX.....'],
-            "answer": ['...XXXXXX', '.XXX.X...', '.....X.XX', 'XXXX.X...', 'XX...X.XX', 'XX.XXX.X.', 'X......X.',
-                       'XX.X.XXX.', 'XXXX.....'],
-        }
     ]
 }
 
