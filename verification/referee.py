@@ -49,6 +49,7 @@ ERROR_TYPE_CELL = (False, "Cells should contains lowercase ascii letters or 'X'"
 F_ERROR_REPEATED = lambda w: (False, "Found repeated words '{}'".format(w))
 F_ERROR_UNKNOWN = lambda w: (False, "The word '{}' is not from the dictionary".format(w))
 
+
 def find_word(grid, row, col):
     word = ""
     while col < len(grid[row]) and grid[row][col] != "X":
@@ -94,7 +95,7 @@ def checker(template, result):
                 continue
             if (k == 0 or template[k - 1][m] == "X") and (k < len(template) - 1 and template[k + 1][m] == "."):
                 words.append(find_word(result, k, m))
-            if (k == 0 or template[k][m - 1] == "X") and (m < len(template[k]) - 1 and template[k][m + 1] != " "):
+            if (m == 0 or template[k][m - 1] == "X") and (m < len(template[k]) - 1 and template[k][m + 1] == "."):
                 words.append(find_word(rotated_result, m, k))
     for w in words:
         if w in used_words:
@@ -103,6 +104,7 @@ def checker(template, result):
         if w not in WORDS:
             return F_ERROR_UNKNOWN(w)
     return True, "Great!"
+
 
 api.add_listener(
     ON_CONNECT,
