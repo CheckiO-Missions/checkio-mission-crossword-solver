@@ -164,7 +164,7 @@ BASIC_TESTS = [
      'XX.XXX.X.', 'X......X.', 'XX.X.XXX.', 'XXXX.....'],
 ]
 
-EXTRA_TEST = [
+EXTRA_TESTS = [
     ['XXXXXXX.XXXXX.X', '.X........XXX.X', '.X.XXXX.XXX.X.X', '...XXXX.XXX....', 'XX.XX.XXX.X.XXX', 'X.....XXX......',
      'XX.XX.X.X.XXX.X', 'XX..........X.X', 'XXXXXXX.X.X.XXX', 'X.XXX.....X...X', 'X.X.X.X.XXX.X.X', 'X.....XXX.....X',
      'XXX.X.XXX.X.X.X', '....XXXXX.XXX.X', 'XXXXXXXXX.XXXXX'],
@@ -184,6 +184,6 @@ EXTRA_TEST = [
 for t in BASIC_TESTS:
     TESTS["Basics"].append({"input": [t, list(WORDS)], "answer": t})
 
-for t in BASIC_TESTS:
+for t in EXTRA_TESTS:
     TESTS["Extra"].append({"input": [t, list(WORDS)], "answer": t})
 
