@@ -94,9 +94,9 @@ def checker(template, result):
             if symb == "X":
                 continue
             if (k == 0 or template[k - 1][m] == "X") and (k < len(template) - 1 and template[k + 1][m] == "."):
-                words.append(find_word(result, k, m))
-            if (m == 0 or template[k][m - 1] == "X") and (m < len(template[k]) - 1 and template[k][m + 1] == "."):
                 words.append(find_word(rotated_result, m, k))
+            if (m == 0 or template[k][m - 1] == "X") and (m < len(template[k]) - 1 and template[k][m + 1] == "."):
+                words.append(find_word(result, k, m))
     for w in words:
         if w in used_words:
             return F_ERROR_REPEATED(w)
