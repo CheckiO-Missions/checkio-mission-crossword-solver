@@ -113,6 +113,7 @@ api.add_listener(
             'python-3': cover
         },
         checker=checker,  # checkers.float.comparison(2)
+        function_name="solver"
         # add_allowed_modules=[],
         # add_close_builtins=[],
         # remove_allowed_modules=[]
