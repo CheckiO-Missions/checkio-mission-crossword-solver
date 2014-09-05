@@ -73,6 +73,9 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
             $content.find('.call').html(checkioInputStr);
             $content.find('.output').html('Working...');
 
+            var svg = new CrosswordSVG($content.find(".explanation")[0]);
+            svg.prepare(checkioInput);
+
 
             if (data.ext) {
                 var rightResult = data.ext["answer"];
@@ -82,9 +85,12 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
 
                 //if you need additional info from tests (if exists)
                 var explanation = data.ext["explanation"];
+
+                setTimeout(function(){svg.finish(userResult)}, 300);
+
                 $content.find('.output').html('&nbsp;Your result:&nbsp;' + JSON.stringify(userResult));
                 if (!result) {
-                    $content.find('.answer').html('Right result:&nbsp;' + JSON.stringify(rightResult));
+                    $content.find('.answer').html(result_addon);
                     $content.find('.answer').addClass('error');
                     $content.find('.output').addClass('error');
                     $content.find('.call').addClass('error');
@@ -125,27 +131,76 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
 //            });
 //        });
 
-        var colorOrange4 = "#F0801A";
-        var colorOrange3 = "#FA8F00";
-        var colorOrange2 = "#FAA600";
-        var colorOrange1 = "#FABA00";
+        function CrosswordSVG(dom) {
 
-        var colorBlue4 = "#294270";
-        var colorBlue3 = "#006CA9";
-        var colorBlue2 = "#65A1CF";
-        var colorBlue1 = "#8FC7ED";
+            var colorOrange4 = "#F0801A";
+            var colorOrange3 = "#FA8F00";
+            var colorOrange2 = "#FAA600";
+            var colorOrange1 = "#FABA00";
 
-        var colorGrey4 = "#737370";
-        var colorGrey3 = "#9D9E9E";
-        var colorGrey2 = "#C5C6C6";
-        var colorGrey1 = "#EBEDED";
+            var colorBlue4 = "#294270";
+            var colorBlue3 = "#006CA9";
+            var colorBlue2 = "#65A1CF";
+            var colorBlue1 = "#8FC7ED";
 
-        var colorWhite = "#FFFFFF";
-        //Your Additional functions or objects inside scope
-        //
-        //
-        //
+            var colorGrey4 = "#737370";
+            var colorGrey3 = "#9D9E9E";
+            var colorGrey2 = "#C5C6C6";
+            var colorGrey1 = "#EBEDED";
 
+            var colorWhite = "#FFFFFF";
+
+            var cell = 20;
+
+            var aCell = {"stroke": colorBlue4, "stroke-width": 1};
+            var aLetter = {"font-family": "Roboto", "font-weight": "bold", "font-size": cell * 0.7};
+
+            var paper;
+
+            this.prepare = function (data) {
+                paper = Raphael(dom, cell * (data[0].length + 2), cell * (data.length + 2));
+
+                for (var row = 0; row < data.length; row++) {
+                    for (var col = 0; col < data[row].length; col++) {
+                        var r = paper.rect((col + 1) * cell, (row + 1) * cell, cell, cell).attr(aCell);
+                        r.attr("fill", data[row][col] === "." ? colorBlue1 : colorBlue3);
+                    }
+                }
+
+            };
+
+            this.finish = function (data) {
+                if (!data) {
+                    return false;
+                }
+                if (!$.isArray(data)) {
+                    return false;
+                }
+                for (var row = 0; row < data.length; row++) {
+                    var line = data[row];
+                    if (typeof line !== "string") {
+                        continue;
+                    }
+                    for (var col = 0; col < line.length; col++) {
+                        var symb = line[col];
+                        if (symb === "X") {
+                            paper.path([
+                                ["M", cell * (col + 1.15), cell * (row + 1.15)],
+                                ["L", cell * (col + 1.85), cell * (row + 1.85)]
+                            ]).attr(aCell);
+                            paper.path([
+                                ["M", cell * (col + 1.85), cell * (row + 1.15)],
+                                ["L", cell * (col + 1.15), cell * (row + 1.85)]
+                            ]).attr(aCell);
+                        }
+                        else {
+                            paper.text(cell * (col + 1.5), cell * (row + 1.5), symb).attr(aLetter);
+                        }
+                    }
+                }
+            }
+
+        }
 
     }
 );
