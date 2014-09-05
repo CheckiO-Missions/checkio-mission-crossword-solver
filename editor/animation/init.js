@@ -40,10 +40,14 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
             }
 
             //YOUR FUNCTION NAME
-            var fname = 'checkio';
+            var fname = 'solver';
 
-            var checkioInput = data.in;
-            var checkioInputStr = fname + '(' + JSON.stringify(checkioInput) + ')';
+            var checkioInput = data.in || ['.XXX.', '...X.', '.X.X.', '.....'];
+            var checkioInputStr = fname + '(';
+            for (var i = 0; i < checkioInput.length; i++) {
+                checkioInputStr += '<br>u"' + checkioInput[i] + '"';
+            }
+            checkioInputStr += "),<br>WORDS)";
 
             var failError = function (dError) {
                 $content.find('.call').html(checkioInputStr);
