@@ -27,7 +27,7 @@ if __name__ == '__main__':
         # types check
         if not isinstance(result, (tuple, list)):
             return ERROR_TYPE
-        if not all(isinstance(row, str) for row in result):
+        if not all(isinstance(row, (str, unicode)) for row in result):
             return ERROR_TYPE
 
         # size check
