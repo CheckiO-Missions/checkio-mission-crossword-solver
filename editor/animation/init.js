@@ -43,14 +43,15 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
             var fname = 'solver';
 
             var checkioInput = data.in || [['.XXX.', '...X.', '.X.X.', '.....'], "words"];
-            var checkioInputStr = fname + '(';
-            for (var i = 0; i < checkioInput[0].length; i++) {
-                checkioInputStr += '<br>u"' + checkioInput[i] + '"';
+            var checkioInputStr = fname + '(<br>    (';
+            checkioInputStr += 'u"' + checkioInput[0][0] + '"';
+            for (var i = 1; i < checkioInput[0].length; i++) {
+                checkioInputStr += '<br>     u"' + checkioInput[0][i] + '"';
             }
-            checkioInputStr += "),<br>WORDS)";
+            checkioInputStr += "),<br>    WORDS)";
 
             var failError = function (dError) {
-                $content.find('.call').html(checkioInputStr);
+                $content.find('.call-in').html(checkioInputStr);
                 $content.find('.output').html(dError.replace(/\n/g, ","));
 
                 $content.find('.output').addClass('error');
@@ -70,7 +71,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
                 return false;
             }
 
-            $content.find('.call').html(checkioInputStr);
+            $content.find('.call-in').html(checkioInputStr);
             $content.find('.output').html('Working...');
 
             var svg = new CrosswordSVG($content.find(".explanation")[0]);
@@ -88,7 +89,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
 
                 setTimeout(function(){svg.finish(userResult)}, 300);
 
-                $content.find('.output').html('&nbsp;Your result:&nbsp;' + JSON.stringify(userResult));
+                $content.find('.output').html('&nbsp;Your result:<br>&nbsp;' + JSON.stringify(userResult));
                 if (!result) {
                     $content.find('.answer').html(result_addon);
                     $content.find('.answer').addClass('error');
@@ -150,14 +151,16 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
 
             var colorWhite = "#FFFFFF";
 
-            var cell = 20;
+            var cell = 30;
 
-            var aCell = {"stroke": colorBlue4, "stroke-width": 1};
-            var aLetter = {"font-family": "Roboto", "font-weight": "bold", "font-size": cell * 0.7};
+            var aCell, aLetter;
 
             var paper;
 
             this.prepare = function (data) {
+                cell = Math.min(cell, 400 / data[0].length);
+                aCell = {"stroke": colorBlue4, "stroke-width": cell / 20};
+                aLetter = {"font-family": "Roboto", "font-weight": "bold", "font-size": cell * 0.7};
                 paper = Raphael(dom, cell * (data[0].length + 2), cell * (data.length + 2));
 
                 for (var row = 0; row < data.length; row++) {

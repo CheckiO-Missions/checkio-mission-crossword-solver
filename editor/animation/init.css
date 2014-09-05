@@ -34,8 +34,8 @@
 .animation-content{
     background-color: #dfe8f7;
     color: #696969;
-    font-family: Verdana, Arial, helvetica, sans-serif;;
-    font-size: 15px;
+    font-family: Consolas, monospace !important;
+    font-size: 17px;
     width: 100%;
 }
 
@@ -51,6 +51,12 @@
     letter-spacing: 1px;
     word-break: break-word;
     white-space: pre-wrap;
+    width: 95%;
+}
+
+.animation-content .call-in {
+    text-align: left;
+    display: inline-block;
 }
 
 .animation-content .error{
