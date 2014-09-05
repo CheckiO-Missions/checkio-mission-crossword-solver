@@ -23,7 +23,7 @@ if __name__ == '__main__':
         return word
 
     def checker(func, template):
-        result = func(template)
+        result = func(template, WORDS)
         # types check
         if not isinstance(result, (tuple, list)):
             return ERROR_TYPE

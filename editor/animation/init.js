@@ -42,9 +42,9 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
             //YOUR FUNCTION NAME
             var fname = 'solver';
 
-            var checkioInput = data.in || ['.XXX.', '...X.', '.X.X.', '.....'];
+            var checkioInput = data.in || [['.XXX.', '...X.', '.X.X.', '.....'], "words"];
             var checkioInputStr = fname + '(';
-            for (var i = 0; i < checkioInput.length; i++) {
+            for (var i = 0; i < checkioInput[0].length; i++) {
                 checkioInputStr += '<br>u"' + checkioInput[i] + '"';
             }
             checkioInputStr += "),<br>WORDS)";
