@@ -46,7 +46,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
             var checkioInputStr = fname + '(<br>    (';
             checkioInputStr += 'u"' + checkioInput[0][0] + '"';
             for (var i = 1; i < checkioInput[0].length; i++) {
-                checkioInputStr += '<br>     u"' + checkioInput[0][i] + '"';
+                checkioInputStr += '<br>     u"' + checkioInput[0][i] + '",';
             }
             checkioInputStr += "),<br>    WORDS)";
 
@@ -165,8 +165,12 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
 
                 for (var row = 0; row < data.length; row++) {
                     for (var col = 0; col < data[row].length; col++) {
+                        var ch = data[row][col];
                         var r = paper.rect((col + 1) * cell, (row + 1) * cell, cell, cell).attr(aCell);
-                        r.attr("fill", data[row][col] === "." ? colorBlue1 : colorBlue3);
+                        r.attr("fill", ch === "X" ? colorBlue3 : colorBlue1);
+                        if (ch !== "X" && ch !== ".") {
+                            paper.text(cell * (col + 1.5), cell * (row + 1.5), ch).attr(aLetter);
+                        }
                     }
                 }
 
