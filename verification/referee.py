@@ -79,7 +79,7 @@ def checker(template, result):
             elif ch == ".":
                 return ERROR_UNFILLED
             elif ch in string.ascii_lowercase:
-                if template[i][j] != ".":
+                if template[i][j] != "." and template[i][j] != ch:
                     return ERROR_TEMPLATE
             else:
                 return ERROR_TYPE_CELL
