@@ -166,18 +166,18 @@ BASIC_TESTS = [
 
 EXTRA_TEST = [
     ['XXXX.....X', 'XXXX.XXX.X', 'X....XXX.X', 'XX.XXX.XXX', 'X.......XX', 'XX.X.X.XXX', '..........', '.XXX.X.X.X',
-     '...XXX.X.X', '.XXXXXXX.X']
+     '...XXX.X.X', '.XXXXXXX.X'],
 
-    [
-        'XX.X.XXXX', 'X....XXXX', 'XX.X.X.XX', '.........', 'XXXX.X.X.', '.X.....X.', '.X.X.XXXX', '...X....X', 'XX.XXXXXX']
+    ['XX.X.XXXX', 'X....XXXX', 'XX.X.X.XX', '.........', 'XXXX.X.X.', '.X.....X.', '.X.X.XXXX', '...X....X',
+     'XX.XXXXXX'],
 
-    ['...XX.XX.', 'XX.X.....', '...XXXXX.', 'XX.X.XXX.', 'X......X.', 'XXXX.X.X.', 'XXX......', 'XXXXXX.XX']
+    ['...XX.XX.', 'XX.X.....', '...XXXXX.', 'XX.X.XXX.', 'X......X.', 'XXXX.X.X.', 'XXX......', 'XXXXXX.XX'],
 
-    [
-        'XXX.XXX.XX', 'XXX......X', 'X.X.XXX.XX', '....XXX...', 'X.X.X.XXXX', 'X.X....XXX', 'X.XXX.XXX.', 'XXXX......', 'XXXXXXX.X.', 'XXXXXXX...', 'XXXXXXXXX.']
+    ['XXX.XXX.XX', 'XXX......X', 'X.X.XXX.XX', '....XXX...', 'X.X.X.XXXX', 'X.X....XXX', 'X.XXX.XXX.', 'XXXX......',
+     'XXXXXXX.X.', 'XXXXXXX...', 'XXXXXXXXX.'],
 
-    [
-        'XXXXXX.X.', 'XX.......', 'XX.X.XXXX', 'X........', 'X.XXXXX.X', 'X....XX.X', 'XXX.XXXXX', 'X......XX', 'XXX..X.XX', '.......XX', 'XXXXXX.XX']
+    ['XXXXXX.X.', 'XX.......', 'XX.X.XXXX', 'X........', 'X.XXXXX.X', 'X....XX.X', 'XXX.XXXXX', 'X......XX',
+     'XXX..X.XX', '.......XX', 'XXXXXX.XX']
 
 
 ]
