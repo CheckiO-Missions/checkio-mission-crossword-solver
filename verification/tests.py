@@ -165,31 +165,20 @@ BASIC_TESTS = [
 ]
 
 EXTRA_TEST = [
-    [u"XXXXXXXbXXXXXcX",
-     u"lXteachingXXXaX",
-     u"aXoXXXXkXXX.XlX",
-     u"youXXXXeXXX..m.",
-     u"XXrXX.XXX.X.XXX",
-     u"X.i...XXX......",
-     u"XXsXX.X.X.XXX.X",
-     u"XXtechnologyX.X",
-     u"XXXXXXX.X.X.XXX",
-     u"X.XXXtotalX...X",
-     u"X.X.X.X.XXX.X.X",
-     u"X.....XXX.....X",
-     u"XXX.X.XXX.X.X.X",
-     u"....XXXXX.XXX.X",
-     u"XXXXXXXXX.XXXXX"],
+    ['XXXX.....X', 'XXXX.XXX.X', 'X....XXX.X', 'XX.XXX.XXX', 'X.......XX', 'XX.X.X.XXX', '..........', '.XXX.X.X.X',
+     '...XXX.X.X', '.XXXXXXX.X']
 
-    ['....X.X.X.X....', '.XXXX.X.X.X.XX.', '......X.X....X.', 'XX.XX.X.X.XXXX.', '.X.XX........X.', '...XX.XXXXX.XXX',
-    '.XXXX.X.XXX....', '....X....XXXX.X', 'XXX.XXX.XXXXX.X', 'XXX.XX......X.X', '..XXXXXXX.X.XXX', 'X.XX......X....',
-    'X.XXX.X.X.X.X.X', 'X.....X...XXX.X', 'XXXXXXX.X.X...X'],
+    [
+        'XX.X.XXXX', 'X....XXXX', 'XX.X.X.XX', '.........', 'XXXX.X.X.', '.X.....X.', '.X.X.XXXX', '...X....X', 'XX.XXXXXX']
 
-    ['......X.XXXXX.X.....', 'X.XXXXX.XXX.X.X.X.XX', 'X.X.....XXX...X....X', 'X.X.XXXXX.X.XXX.XXXX',
-    '......XXX...X......X', 'XXX.X.X.X.XXX.X.XX.X', '....X.....XX.....X.X', 'XXX.XXX.XXXXX.XXXXXX',
-    '....XXX.X.X.X.....X.', 'XXX.XX......X.XXXXX.', 'XXX.XXXXX.X.X.XXXXX.', '....XX....X.........',
-    'XXXXXXX.XXX.XXXX.XXX', 'XXXX....XX.....X...X', 'X.XXX.X.XXXXX.XX.XXX', 'X.XX..X.......XX....',
-    'X.XXX.X.X.X.X.XX.X.X', 'X.....XXX.X.XXXXXX.X', 'X.X.X.X.....XXX....X', 'X.X.XXXXXXXXXXXXXX.X'],
+    ['...XX.XX.', 'XX.X.....', '...XXXXX.', 'XX.X.XXX.', 'X......X.', 'XXXX.X.X.', 'XXX......', 'XXXXXX.XX']
+
+    [
+        'XXX.XXX.XX', 'XXX......X', 'X.X.XXX.XX', '....XXX...', 'X.X.X.XXXX', 'X.X....XXX', 'X.XXX.XXX.', 'XXXX......', 'XXXXXXX.X.', 'XXXXXXX...', 'XXXXXXXXX.']
+
+    [
+        'XXXXXX.X.', 'XX.......', 'XX.X.XXXX', 'X........', 'X.XXXXX.X', 'X....XX.X', 'XXX.XXXXX', 'X......XX', 'XXX..X.XX', '.......XX', 'XXXXXX.XX']
+
 
 ]
 
