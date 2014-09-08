@@ -171,13 +171,13 @@ EXTRA_TEST = [
     ['XX.X.XXXX', 'X....XXXX', 'XX.X.X.XX', '.........', 'XXXX.X.X.', '.X.....X.', '.X.X.XXXX', '...X....X',
      'XX.XXXXXX'],
 
-    ['...XX.XX.', 'XX.X.....', '...XXXXX.', 'XX.X.XXX.', 'X......X.', 'XXXX.X.X.', 'XXX......', 'XXXXXX.XX'],
+    ['...XXXXX.', 'XX.X.....', '...XXXXX.', 'XX.X.XXX.', 'X......X.', 'XXXX.X.X.', 'XXX......', 'XXXXXX.XX'],
 
     ['XXX.XXX.XX', 'XXX......X', 'X.X.XXX.XX', '....XXX...', 'X.X.X.XXXX', 'X.X....XXX', 'X.XXX.XXX.', 'XXXX......',
      'XXXXXXX.X.', 'XXXXXXX...', 'XXXXXXXXX.'],
 
-    ['XXXXXX.X.', 'XX.......', 'XX.X.XXXX', 'X........', 'X.XXXXX.X', 'X....XX.X', 'XXX.XXXXX', 'X......XX',
-     'XXX..X.XX', '.......XX', 'XXXXXX.XX']
+    ['XXX.X.XXX', 'XX.......', 'XXX.X.XXX', 'X........', 'X.XXXXX.X', 'X....XX.X', 'XXX.XXXXX', 'XX......X',
+     'XXX.X.X.X', '....X...X', 'XXXXXXX.X'],
 
 
 ]
