@@ -44,7 +44,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
 
             var checkioInput = data.in || [['.XXX.', '...X.', '.X.X.', '.....'], "words"];
             var checkioInputStr = fname + '(<br>    (';
-            checkioInputStr += 'u"' + checkioInput[0][0] + '"';
+            checkioInputStr += 'u"' + checkioInput[0][0] + '",';
             for (var i = 1; i < checkioInput[0].length; i++) {
                 checkioInputStr += '<br>     u"' + checkioInput[0][i] + '",';
             }
